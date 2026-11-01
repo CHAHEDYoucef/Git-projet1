@@ -1,0 +1,26 @@
+name: Demo GitHub Actions
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  demonstration:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Recuperer le code
+        uses: actions/checkout@v4
+
+      - name: Afficher un message
+        run: echo "Bonjour, GitHub Actions fonctionne !"
+
+      - name: Afficher la date
+        run: date
+
+      - name: Afficher les fichiers
+        run: ls -la
+
+      - name: Fin du workflow
+        run: echo "Pipeline termine avec succes !"
